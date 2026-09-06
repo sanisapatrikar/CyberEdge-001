@@ -109,15 +109,15 @@ Placeholder (explicitly marked `TODO` in-file):
 - MAC whitelist is RAM-only; NVS persistence noted as an open decision,
   not an oversight
 
-## Suggested next steps (maps to your phase plan)
+## Probable next steps
 
-1. **Phase 1 (drivers):** fill in `drivers/drivers.cpp` against your
+1. **Phase 1 (drivers):** fill in `drivers/drivers.cpp` against
    actual display/RFID/nRF part numbers and libraries; nothing else in
    this tree needs to change to accommodate that.
 2. Wire the UI's consent-entry screen to populate `StartRequest` in
    `state_machine.cpp` instead of the current zeroed placeholder, and
    add a UI flow for `mac_whitelist::addEntry()`.
-3. **Phase 2/IPC split** you flagged is already reflected here — the
+3. **Phase 2/IPC split** is already reflected here — the
    queue/event-group topology in `core/ipc.*` is the bus; treat any
    future module as "implement `ModuleTaskFn`, register it," not as a
    reason to touch the core.
